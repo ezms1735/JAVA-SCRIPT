@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Clock</title>
+</head>
+<body>
+    <h1>Waktu:</h1>
+    <div id="clock"></div>
+
+    <script language="Javascript">
+        function updateClock() {
+            var sekarang = new Date();
+            var tanggal = sekarang.toLocaleDateString();
+            var jam = sekarang.toLocaleTimeString();
+            document.getElementById('clock').innerHTML = tanggal + ' ' + jam;
+        }
+
+        setInterval(updateClock, 1000);
+
+        updateClock();
+    </script>
+</body>
+</html>

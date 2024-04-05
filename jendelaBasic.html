@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jendela Basic JQuery</title>
+</head>
+<style>
+    .box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    .jendela {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 360px;
+        height: 360px;
+        background-color: darkslateblue;
+        border-radius: 3px;
+        text-align: center;
+        font-size: 50px;
+        color: white;
+    }
+</style>
+<body>
+    <button class="tombol" target="jendela1">Jendela 1</button>
+    <div class="box" id="jendela1">
+        <div class="jendela">Jendela 1</div>
+    </div>
+    <button class="tombol" target="jendela2">Jendela 2</button>
+    <div class="box" id="jendela2">
+        <div class="jendela">Jendela 2</div>
+    </div>
+</body>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(".tombol").click(function() {
+        const target = $(this).attr("target")
+        $("#"+target).fadeIn();
+    })
+    $(".box").click(function() {
+        $(".box").fadeOut();
+    })
+    $(".jendela").click(function(e) {
+        e.stopPropagation();
+    })
+</script>
+</html>
